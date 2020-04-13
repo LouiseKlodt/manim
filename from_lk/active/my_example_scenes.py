@@ -2,30 +2,35 @@
 
 from manimlib.imports import *
 
-class FirstExample(Scene):
-    def construct(self):
-        circle = Circle()
-        #self.play(ShowCreation(circle))
-        #self.add(circle)
-        self.play(ShowCreation(circle))
+# class FirstExample(Scene):
+#     def construct(self):
+#         circle = Circle()
+#         #self.play(ShowCreation(circle))
+#         #self.add(circle)
+#         self.play(ShowCreation(circle))
 
-class LongDivision(Scene):
+class Intro(Scene):
     def construct(self):
         title = TextMobject("Long Division")
-        sub = TextMobject("You've been doing it wrong all along")
+        title.to_edge(UP)
 
-        VGroup(title, sub).arrange(DOWN)
+        sub_title = TextMobject("You've been doing it wrong all along")
 
-        self.play(
-            FadeIn(title)
-        )
-
-        #self.wait()
+        VGroup(title, sub_title).arrange(DOWN)
 
         self.play(
-            FadeIn(sub)
+            Write(title, run_time = 4)
+        )
+        self.play(
+            FadeIn(sub_title, run_time = 4)
         )
 
 
+class OldMethod(Scene):
+    def construct(self):
+        line = Line(LEFT, RIGHT, color = RED, stroke_width = 7)
 
-    #self.wait()
+        vline = Line(LEFT, RIGHT - 2, color = RED, stroke_width = 7)
+
+        self.play(Write(line))
+        self.play(Write(vline))
