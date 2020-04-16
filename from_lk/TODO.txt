@@ -1,0 +1,9 @@
+Future Videos:
+
+1. Rational number line & Ford Circles
+Source: Wildberger / Math Foundations A
+
+Random Ideas:
+
+1. Mini Manim
+Create a basic version of Manim which is easy install and only supports the basic functionality.
