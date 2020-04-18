@@ -2,39 +2,6 @@
 
 from manimlib.imports import *
 
-class Play(Scene):
-    def construct(self):
-        c = Circle()
-        e = Ellipse()
-        r = Rectangle()
-        a = Arc(angle = 1/4 * TAU)
-        asec = AnnularSector()
-        an = Annulus()
-        t = Triangle()
-
-        self.play(ShowCreation(c))
-
-        group_a = VGroup(c, e, r, a)
-        group_b = VGroup(asec, an, t)
-        group_a.arrange(LEFT)
-
-        self.play(FadeIn(group_a))
-        self.play(FadeOut(group_a))
-
-        self.play(FadeIn(group_b))
-        self.play(FadeOut(group_b))
-
-        l = Line()
-        el = Elbow()
-        ar = Arrow()
-        v = Vector(direction = LEFT)
-
-        lgroup = VGroup(l, el, ar, v)
-        lgroup.arrange(DOWN)
-        self.play(FadeIn(lgroup))
-
-
-
 class Intro(Scene):
     def construct(self):
         #self.intro()
@@ -56,16 +23,21 @@ class Intro(Scene):
         """Animates the classical long division approach."""
         title = TextMobject("Classic approach")
         self.play(FadeIn(title))
-        self.play(ApplyMethod(title.move_to, 2*UP))
+        self.play(ApplyMethod(title.move_to, 3*UP))
 
-        # hline = Line(color=RED)
-        # vline = Line(LEFT, DOWN + LEFT, color=RED)
         el = Elbow(width = 1)
+        numerator = TexMobject("134")
+        denominator = TexMobject("8")
+
         el.flip()
-        numerator = TexMobject(r"367")
-        group_a = VGroup(el, numerator)
-        group_a.arrange(LEFT)
+        numerator.move_to(el.get_center())
+        group = VGroup(el, numerator)
+        denominator.next_to(group, direction=LEFT)
 
-        denominator = TexMobject(r"4")
+        self.play(Write(group), Write(denominator))
 
-        self.play(FadeIn(group_a))
+        #numerator[0].set_color(color = RED)
+
+        self.play(ApplyMethod(numerator[0].set_color, RED))
+
+        # color first digit red of 134

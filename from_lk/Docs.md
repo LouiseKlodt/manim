@@ -20,6 +20,7 @@ flip()
 center()
 to_corner(point) -> moves to corner, default corners: DOWN + LEFT (DL), etc.
 to_edge(point) -> same as to_corner(), default edges are UP, DOWN, LEFT, RIGHT, IN, OUT, etc.
+next_to(direction) -> position next to mobj
 
 ## Animation
 ### creation animations
