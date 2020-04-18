@@ -2,7 +2,8 @@
 
 from manimlib.imports import *
 
-class Play(Scene):
+# geometry.py
+class ShapePlay(Scene):
     def construct(self):
         c = Circle()
         e = Ellipse()
@@ -33,6 +34,7 @@ class Play(Scene):
         lgroup.arrange(DOWN)
         self.play(FadeIn(lgroup))
 
+#
 class TexPlay(Scene):
     def construct(self):
         digits = TexMobject("1", "2", "3")
