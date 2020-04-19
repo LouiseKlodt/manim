@@ -26,7 +26,6 @@ class Intro(Scene):
         numr = TexMobject("1", "3", "4")
         denom = TexMobject("8")
         soln = TexMobject("1", "6", ".", "7", "5")
-        #tail = TexMobject("8", "54", "48", "60", "56", "40", "40", "0")
         tail_1 = TexMobject("5", "4")
         tail_2 = TexMobject("4", "8")
         tail_3 = TexMobject("6", "0")
@@ -44,7 +43,6 @@ class Intro(Scene):
 
         # grouping
         group = VGroup(el, numr, denom)
-
         group.move_to(2.4*UP)
 
         # arrange tail
@@ -58,7 +56,6 @@ class Intro(Scene):
         head.add(underline)
 
         tail_1.align_to(head, direction=LEFT, alignment_vect=LEFT )
-        #tail_1.match_x(head)
         tail_1.next_to(head, aligned_edge=LEFT, direction=DOWN+RIGHT*head.get_width()*2)
         tail_2.next_to(tail_1, aligned_edge=LEFT, direction=DOWN)
 
@@ -91,16 +88,14 @@ class Intro(Scene):
         group.add(soln)
 
         # animations
-        #self.play(FadeIn(title))
+        self.play(FadeIn(title))
+        self.wait(0.2)
+        self.play(FadeOut(title))
         #self.play(ApplyMethod(title.move_to, 2.4*UP))
-
-
-
         self.play(Write(group))
-        #self.play(Write(mult_table))
+        self.play(Write(mult_table))
         self.play(Write(head), Write(tail_1), Write(tail_2), Write(tail_3),
         Write(tail_4), Write(tail_5), Write(tail_5_cp), Write(tail_6))
-
 
 
         self.wait(10)
