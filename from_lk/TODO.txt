@@ -7,3 +7,17 @@ Random Ideas:
 
 1. Mini Manim
 Create a basic version of Manim which is easy install and only supports the basic functionality.
+
+
+-----------------------
+Framework for Geometry:
+
+Points: A = [x,y] # x,y e Rat
+Lines: l = <a : b : c>, # a,b,c e Rat
+
+A lies on l <=> ax + by + c = 0
+
+Join of points:
+  A1 = [x1, y1], A2 [x2, y2] # A1, A2 distinct points
+  then there is one line through A1, and A1 given by:
+  l = <y1-y2 : x2-x1 : x1y2-x2y1>
